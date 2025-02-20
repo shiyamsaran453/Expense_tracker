@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <style>
+        #cat-list {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .category {
+            border: 2px solid black;
+            min-width: 350px;
+            text-align: center;
+            height: 350px;
+            overflow: auto;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            min-width: 735px;
+            margin: 15px;
+            border: 2px solid black;
+            padding: 20px;
+        }
+        #form-total {
+            display: flex;
+            flex-direction: row;
+        }
+        #total {
+            border: 2px solid black;
+            display: flex;
+            flex-direction: column;
+            min-width: 735px;
+            margin: 15px;
+            padding: 20px;
+            text-align: center;
+        }
+        button{
+            margin-left: 5px;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="cat-list">
+        <div class="category">
+            <h1>Food</h1>
+            <hr>
+        </div>
+        <div class="category">
+            <h1>Transportation</h1>
+            <hr>
+        </div>
+        <div class="category">
+            <h1>Entertainment</h1>
+            <hr>
+        </div>
+        <div class="category">
+            <h1>Others</h1>
+            <hr>
+        </div>
+    </div>
+    <div id="form-total">
+        <form onsubmit="get_value(event)">
+            <div class="mb-3">
+                <input type="text" class="form-control" id="des" aria-describedby="description" placeholder="Description">
+            </div>
+            <div class="mb-3">
+                <input type="number" class="form-control" id="exampleInputPassword1" placeholder="Amount">
+            </div>
+            <div class="mb-3">
+                <label for="category">Choose category</label>
+                <select id="category" class="form-control" required>
+                    <option value="Food">Food</option>
+                    <option value="Transportation">Transportation</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <div id="total">
+            <h2>Total Expenses: <span id="total-expenses">$0</span></h2>
+            <h3>By Category:</h3>
+            <p>Food: <span id="food-total">$0</span></p>
+            <p>Transportation: <span id="transportation-total">$0</span></p>
+            <p>Entertainment: <span id="entertainment-total">$0</span></p>
+            <p>Others: <span id="others-total">$0</span></p>
+
+        </div>
+    </div>
+    <script src="index1.js"></script>
+</body>
+</html>
